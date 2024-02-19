@@ -1,0 +1,21 @@
+-- Create a table to store information about users
+CREATE TABLE users (
+    user_id SERIAL PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    age INTEGER
+);
+
+-- Insert some data into the users table
+INSERT INTO users (username, email, age)
+VALUES ('john_doe', 'john@example.com', 30),
+       ('jane_smith', 'jane@example.com', 25),
+       ('mike_jones', 'mike@example.com', 40);
+
+-- Update the age of a user
+UPDATE users
+SET age = 35
+WHERE username = 'john_doe';
+
+-- Retrieve data from the users table
+SELECT * FROM users;
